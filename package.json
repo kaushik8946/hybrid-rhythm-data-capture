@@ -1,14 +1,16 @@
 {
   "name": "hybrid-rhythm-data-capture",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite build --watch",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.325",
+    "@types/node": "^26.1.2",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"
   }
