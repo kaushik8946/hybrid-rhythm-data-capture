@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Hybrid Rhythm Data Capture",
+  "description": "Captures getUpdatedEmployeeData API responses and saves them locally.",
+  "version": "0.0.1",
+  "permissions": [
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://chebz162229098.sl2469408.sl.dst.ibm.com/*",
+    "https://chebz162229098.sl2469408.sl.dst.ibm.com:9443/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chebz162229098.sl2469408.sl.dst.ibm.com/*",
+        "https://chebz162229098.sl2469408.sl.dst.ibm.com:9443/*"
+      ],
+      "js": ["content-script-loader.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://chebz162229098.sl2469408.sl.dst.ibm.com/*",
+        "https://chebz162229098.sl2469408.sl.dst.ibm.com:9443/*"
+      ],
+      "js": ["content-bridge.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    }
+  ],
+  "icons": {
+    "48": "icons.svg",
+    "128": "icons.svg"
+  }
+}
