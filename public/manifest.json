@@ -1,15 +1,22 @@
 {
   "manifest_version": 3,
   "name": "Hybrid Rhythm Data Capture",
-  "description": "Captures getUpdatedEmployeeData API responses and saves them locally.",
-  "version": "0.0.1",
+  "description": "Secure local bridge: captures attendance data from Hybrid Rhythm and makes it available exclusively to Attendance Forecast via origin-verified extension messaging.",
+  "version": "0.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxx9GJ6zWQ4aDVorMijISAnUd6oYhoSdnJ3EcbnF95dL7fiankJYfnF6HwDNxihR70sQ2beb4d00leS9mOSZ2ryqNnD9o8Ko2Yz14F0tvvgre+Krp1FShx//Dvc+4btYqjphju2DC35WQbI3WhPKgERm5bNYVIfJCndvvzVDK2oJ2W6Hg0Val1p7FoI9LcGblzEi5YsvnnQ3aq/qXapoxZh4Bw6JPzkNyUAKMkQiH/GEt5vscYdyF7jBPlaSo/upRLNfJPd/PsQtqUBBrW4QV+nOEIHnbBUOdUbGtDt/+gi/XdSVn60K/wxePSW5eFYIsw9QDkoQjWZtxlvE8EyTi+QIDAQAB",
   "permissions": [
-    "downloads"
+    "storage"
   ],
   "host_permissions": [
     "https://chebz162229098.sl2469408.sl.dst.ibm.com/*",
     "https://chebz162229098.sl2469408.sl.dst.ibm.com:9443/*"
   ],
+  "externally_connectable": {
+    "matches": [
+      "https://attendance-forecast.netlify.app/*",
+      "http://localhost:5173/*"
+    ]
+  },
   "background": {
     "service_worker": "background.js",
     "type": "module"

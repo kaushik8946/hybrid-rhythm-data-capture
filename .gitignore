@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Extension signing key — pairs with the "key" field in public/manifest.json.
+# Pins the extension ID; must never be committed or shared.
+*.pem
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
